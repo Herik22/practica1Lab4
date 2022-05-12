@@ -1,0 +1,83 @@
+<div class="container">  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Selecciona Actor</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+         <app-tabla-actor (actorSeleccionado)="actualizarActor($event)"></app-tabla-actor> 
+      </div>
+      <!--
+          public id:number;
+    public nombre:string;
+    public tipo:TipoPelicula;
+    //public tipo: string;
+    public fechaDeEstreno:Date;
+    public cantidadDePublico:number;
+    public fotoPelicula:string;
+      -->
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Complete los datos de la pelicula</h4>
+
+            <div class="mb-3">
+              <label for="firstName">Nombre</label>
+              <input class="form-control"  [(ngModel)]="newPelicula.nombre" >
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName">Aforo</label>
+                <input class="form-control" [(ngModel)]="newPelicula.cantidadDePublico" >
+            </div>
+            <div class="mb-3">
+                <label for="lastName">Imagen</label>
+                <input type="file" accept=".pdf,.jpg,.png" class="form-control" [(ngModel)]="newPelicula.fotoPelicula" >
+                <img *ngIf="newPelicula.fotoPelicula!='' " [src]="newPelicula.fotoPelicula" alt="" width="100" height="100">
+            </div>
+          <div class="mb-3 ">
+            <label for="selectTipo">Categoria de película</label>
+            <select class="form-control" id="selectTipo" [(ngModel)]="newPelicula.tipo">
+              <option *ngFor="let tipo of arrayTipos">{{tipo}}</option>
+            </select>
+            </div>
+          <div class="mb-3">
+            <label for="username">Fecha de Estreno</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">📆</span>
+              </div>
+              <input type="date" class="form-control" id="username" placeholder="Seleccione Fecha" [(ngModel)]="newPelicula.fechaDeEstreno" >
+
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="username">Actor </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">🎬</span>
+              </div>
+              <input type="text" class="form-control" id="username" placeholder="Seleccione actor" value={{newPelicula.actorPelicula.nombre}} disabled="true" >
+
+            </div>
+          </div>
+    
+          <hr class="mb-4">
+
+
+          <hr class="mb-4">
+  
+          <h4 class="mb-3">Crear actor</h4>
+
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="mostrarPeliculaNueva()">Aceptar</button>
+      </div>
+    </div>
+  
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017-2020 Company Name</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+</div>

@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE:</th>
+        <th scope="col">APELLIDO:</th>
+        <th scope="col">PAIS</th>
+        <th scope="col">IMG</th>
+       
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let actor of listaActores2 ">
+      <tr>
+        <td>{{actor.nombre}}</td>
+        <td>{{actor.apellido}}</td>
+        <td>{{actor.pais}}</td>
+        <td><img [src]="actor.foto" alt="" width="70px" height="70px"></td>
+        <td> <button (click)="comunicarActorSeleccionado(actor)"> SELECCIONAR ACTOR </button> </td>
+      </tr>
+    </tbody>
+  </table>
+
