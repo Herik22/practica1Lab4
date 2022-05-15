@@ -5,6 +5,8 @@ import { PeliculasRoutingModule } from './peliculas-routing.module';
 import { PeliculaAltaComponent } from './pelicula-alta/pelicula-alta.component';
 import { PeliculaListadoComponent } from './pelicula-listado/pelicula-listado.component';
 import { TablaActorComponent } from '../tabla-actor/tabla-actor.component';
+import { PeliculasActorModule } from '../peliculas-actor.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,6 @@ import { TablaActorComponent } from '../tabla-actor/tabla-actor.component';
     CommonModule,
     FormsModule,
     PeliculasRoutingModule,
-
   ]
 })
 export class PeliculasModule { }
